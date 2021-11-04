@@ -3,7 +3,7 @@ export default {
   ssr: false,
   target: 'static',
   router: {
-    base: '/<repository-name>/'
+    base: '/landing-testcivitatis/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
