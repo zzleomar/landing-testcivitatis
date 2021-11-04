@@ -6,7 +6,7 @@ jobs:
     cd:
         runs-on: ${{ matrix.os }}
         env:
-            API_URL: https://epayco2-api.herokuapp.com
+            API_URL: https://tranquil-escarpment-46510.herokuapp.com
         strategy:
             matrix:
                 os: [ubuntu-latest]
