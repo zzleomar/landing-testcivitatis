@@ -3,6 +3,8 @@ const store = {
     activities: [],
     load: false,
     quantity: 1,
+    activity: null,
+    show: false,
     date: ''
   }),
   mutations: {
@@ -13,6 +15,12 @@ const store = {
     },
     mutActivities(state, activities) {
       state.activities = activities
+    },
+    mutShow(state, show) {
+      state.show = show
+    },
+    mutActivity(state, activity) {
+      state.activity = activity
     },
     mutToggleSpinning(state, load) {
       state.load = load
@@ -52,6 +60,10 @@ const store = {
     },
     toggleSpinning: ({ commit }, value) => {
       commit('mutToggleSpinning', value)
+    },
+    toggleModal: ({ commit }, { show, activity }) => {
+      commit('mutShow', show)
+      commit('mutActivity', activity)
     }
   }
 }

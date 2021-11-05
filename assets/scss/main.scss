@@ -8,8 +8,25 @@ body{
     background: #fff;
     padding: 1.5em;
   }
+  &-btn{
+    display: flex;
+    & > div {
+      margin: auto;
+    }
+  }
 }
 
 .ant-input-number{
   width: 13rem;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }

@@ -11,7 +11,7 @@
     >
       <a-list-item slot="renderItem" slot-scope="item">
         <a slot="actions" @click="handleSell(item.id)">Comprar</a>
-        <a slot="actions">Ver más</a>
+        <a slot="actions" @click="handleSeleled(item)">Ver más</a>
         <a-list-item-meta :description="`${item.price * quantity} $`">
           <a slot="title">{{ item.title }}</a>
         </a-list-item-meta>
@@ -48,7 +48,10 @@ export default {
     },
   },
   methods: {
-    ...mapActions('activity', ['onSell', 'toggleSpinning']),
+    ...mapActions('activity', ['onSell', 'toggleSpinning', 'toggleModal']),
+    handleSeleled(item) {
+      this.toggleModal({ show: true, activity: item })
+    },
     handleSell(id) {
       const self = this
       self
